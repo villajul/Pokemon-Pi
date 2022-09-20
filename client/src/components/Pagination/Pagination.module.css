@@ -1,0 +1,16 @@
+.container{
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+.num{
+    display: flex; 
+    text-decoration: none; 
+}
+.num2{
+    
+    flex-direction: row;
+    display: flex; 
+    padding: 0 10px;
+}

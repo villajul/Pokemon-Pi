@@ -1,0 +1,55 @@
+.fire{
+    color: red;
+}
+.bug{
+    color: darkgreen;
+}
+.grass{
+    color: green;
+}
+.dark{
+    color: darkslategray;
+}
+.dragon{
+    color: darkcyan;
+}
+.electric{
+    color: yellow;
+}
+
+.fairy{
+    color: rgb(255, 134, 255);
+}
+.fighting{
+    color: orange;
+}
+.flying{
+    color: cadetblue;
+}
+.ghost{
+    color: rgb(126, 76, 126);
+}
+.ground{
+    color: rgb(156, 113, 57);
+}
+.ice{
+    color: rgb(58, 246, 246);
+}
+.normal{
+    color: darksalmon;
+}
+.poison{
+    color: purple;
+}
+.psychic{
+    color: fuchsia;
+}
+.rock{
+    color: rgb(104, 58, 58);
+}
+.steel{
+    color: rgb(16, 168, 16);
+}
+.water{
+    color: rgb(129, 129, 225);
+}

@@ -1,0 +1,30 @@
+
+.container{   
+display: grid;
+justify-content: center;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(1, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+background: linear-gradient(90deg, rgba(42,60,107,1) 0%, rgba(207,205,195,1) 50%, rgba(134,135,161,1) 100%);
+}
+.area1 { grid-area: 1 / 1 / 2 / 2; }
+.area2 { grid-area: 1 / 3 / 2 / 4; }
+.area3 { grid-area: 1 / 5 / 2 / 6;  }
+
+
+.logo{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 15px 15px;
+}
+
+.h2{      
+    color: #fff;
+    padding: 15px 15px;
+}
+.search{
+    padding: 15px 15px;
+}

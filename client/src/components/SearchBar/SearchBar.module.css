@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    position: relative;
+}
+
+.input2{
+position: absolute;
+width: 20%;
+
+}
