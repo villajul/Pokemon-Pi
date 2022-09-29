@@ -1,4 +1,4 @@
-import { Route, Router, Switch } from 'react-router-dom' 
+import { Route, Routes } from 'react-router-dom' 
 import Home from './components/Home/Home';
 import './App.css'
 import CreatePokemon from "./components/CreatePokemon/CreatePokemon";
@@ -8,12 +8,15 @@ import { PokeDetail } from './components/PokeDetail.jsx/PokeDetail';
 
 function App() {
   return (
-     <div>
+     <div>  
       
-       <Route exact path="/" component={LandingPage}/>
-       <Route exact path="/home" component={Home}/>
-       <Route exact path="/pokemon/:id" component={PokeDetail}/>
-       <Route exact path="/CreatePokemon" component={CreatePokemon} />
+      <Routes>
+       <Route exact path="/" element={<LandingPage/>}/>
+       <Route exact path="/home" element={<Home/>}/>
+       <Route exact path="/pokemon/:id" element={<PokeDetail/>}/>
+       <Route exact path="/CreatePokemon" element={<CreatePokemon/>} />
+        </Routes>    
+      
      </div>
      
     

@@ -14,6 +14,7 @@ const FilterOrder = ({setOrder,pagination}) => {
   return (
     <div>
     <select onChange={HandlerSubmit}>
+      <option >**Order by Name**</option>
       <option value="ASC">A-Z</option>
       <option value="DSC">Z-A</option>      
     </select>

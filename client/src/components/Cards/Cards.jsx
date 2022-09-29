@@ -11,7 +11,7 @@ const Cards = ({pokemons})=>{
             id={p.id}
             name={p.name}
             image={p.image}
-            type={p.type}/>)}
+            types={p.types}/>)}
         </div>        
     )}
 

@@ -4,7 +4,7 @@ import css from './NavBar.module.css'
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import { useDispatch } from 'react-redux'
-import { GetPokemon, GetPokemons } from '../../actions/actions'
+import { GetPokemons } from '../../actions/actions'
 
 const NavBar = () => { 
   const dispatch = useDispatch(); 
@@ -20,7 +20,7 @@ const NavBar = () => {
               </Link> 
                </div>
                 <div className={css.area2}>
-                <Link to='/createpokemon' style= {{ textDecoration: "none" }}>
+                <Link to='/CreatePokemon' style= {{ textDecoration: "none" }}>
                <h2 className={css.h2}>CreatePokemon</h2>
               </Link>
              </div>          

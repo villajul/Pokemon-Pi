@@ -9,15 +9,16 @@ const Pagination = ({pokePerPage, pokeTotal, pagination}) => {
     }
   return (
     <nav className={css.container}>
-        <ul className={css.container}>
+        <div className={css.container}>
             {pageNumbers.map(num => (
-                <div >
+                <div key={num} >
                 <Link className={css.num} to={num}>
-                <li onClick={()=>pagination(num)} className={css.num2} >{num}</li>
+                    <button onClick={()=>pagination(num)} className={css.num2}>{num}</button>
+                
                 </Link>
                 </div>
             ))}
-        </ul>
+        </div>
     </nav>
   )
 }

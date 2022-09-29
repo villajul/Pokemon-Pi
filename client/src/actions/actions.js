@@ -10,11 +10,17 @@ export const FILTER_ATTACK = 'FILTER_ATTACK'
 export const FILTER_ORDER = 'FILTER_ORDER'
 export const FILTER_TYPE = 'FILTER_TYPE'
 export const GET_TYPE = 'GET_TYPE'
+export const POST_POKEMON = 'POST_POKEMON'
 
 
-export const CreatePokemon = () => async (dispatch)=>{
+export const PostPokemon = (data) => async (dispatch)=>{
 try {
-    const res = await axios.post('http://localhost:3001/pokemons')
+    axios({
+        method: 'post',
+        url: 'http://localhost:3001/pokemons',
+        data:data
+      });
+           
 } catch (error) {
     console.log(error.message)
 }

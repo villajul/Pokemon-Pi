@@ -18,8 +18,7 @@ import FilterOrder from '../Filter/FilterOrder';
 const Home = () => {   
     const dispatch = useDispatch() 
     const pokemones =  useSelector((state) => state.pokemons);
-    const pokemon = [ useSelector((state) => state.pokemon)];
-    const [order, setOrder] = useState('')
+    const [order, setOrder] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
     const [pokePerPage] = useState(9)
     
@@ -40,12 +39,18 @@ const Home = () => {
     return(
         <div className={css.container}>
            <NavBar />
-           <Pagination pokePerPage={pokePerPage} pokeTotal={pokemones.length} pagination={pagination}/>
+           <div className={css.containerFilters}>
            <FilterOrder setOrder={setOrder} pagination={pagination}/>
            <FilterAttack setOrder={setOrder} pagination={pagination}/>
            <FilterType />
            <FilterPokemons />
+           </div>
+           <div className={css.containerPagination}>
+           <Pagination pokePerPage={pokePerPage} pokeTotal={pokemones.length} pagination={pagination}/>
+           </div>
+           <div className={css.containerCards}>
            <Cards pokemons={currentPokes} />
+           </div>
         </div>
     )
 }

@@ -1,16 +1,32 @@
-.container{
-    
+.container{    
     display: flex;
     flex-direction: row;
-    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-items: center;
 }
 .num{
     display: flex; 
     text-decoration: none; 
 }
 .num2{
-    
+    height: 30px;
+    width: 30px;
+    background: rgb(78,87,109);
+    background: radial-gradient(circle, rgba(78,87,109,1) 23%, rgba(226,227,233,1) 58%, rgba(12,32,59,1) 75%);
     flex-direction: row;
     display: flex; 
-    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #f3f3f3;
+    
+}
+
+.num2:before{
+    background: radial-gradient(circle, rgba(12,32,59,1) 100%, rgba(226,227,233,1) 100%,  rgba(78,87,109,1) 0%);
+}
+.num2:hover{    
+    color:rgba(12,32,59,1);
+    cursor: pointer;
 }

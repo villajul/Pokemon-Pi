@@ -2,7 +2,7 @@ import css from './Card.module.css'
 import {Link} from "react-router-dom"
 import './Card.css' 
 
-const Card = ({id,name, image, type}) => {
+const Card = ({id,name, image, types}) => {
 return(
         <Link className={css.title2} to={`/pokemon/${id}`}>
     <div key={id} className={css.container} >
@@ -13,8 +13,8 @@ return(
         <img src={image} alt={name} />
             </div>       
         <div className={css.type2}>
-            {type && type.map((t,i) => (
-                <h3 className={`${t}`} key={i}>{t}</h3>
+            {types?.map((t,i) => (
+                <h3 className={`${t.name}`} key={i}>{t.name}</h3>
                 ) )}
         </div> 
     </div>

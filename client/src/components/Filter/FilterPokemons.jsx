@@ -14,6 +14,7 @@ const FilterPokemons = () => {
 
   return (
     <select  name='Existent' onChange={handlerSubmit}>
+        <option >**Order by Origin**</option>
         <option value="API">Api</option>
         <option value="DATA_BASE">DataBase</option>
     </select>

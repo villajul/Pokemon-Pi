@@ -13,6 +13,7 @@ const FilterType = () => {
   return (
     <div>
       <select name="Types" onChange={handlerSubmit}>
+        <option >**Order by Type**</option>
         {types?.map(t =>(
           <option value={`${t.name}`}> {t.name} </option>
         ))}

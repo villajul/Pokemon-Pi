@@ -1,12 +1,18 @@
 .container{
     display: flex;
-    justify-content: right;
+    justify-content: center;    
     flex-direction: row;
-    position: relative;
+    align-items: center;
+    
 }
-
+.input{
+       height: 25px;
+       width: 50%;
+       border-radius: 5px;
+       font-weight: bolder;
+}
 .input2{
-position: absolute;
-width: 20%;
+padding-left: 8px;
+width: 10%;
 
 }

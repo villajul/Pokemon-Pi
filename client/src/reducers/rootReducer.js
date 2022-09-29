@@ -1,4 +1,4 @@
-import { CLEAN_DETAIL, FILTER_ATTACK, FILTER_ORDER, FILTER_POKEMON, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON, GET_POKEMON_DETAIL, GET_TYPE } from "../actions/actions";
+import { CLEAN_DETAIL, FILTER_ATTACK, FILTER_ORDER, FILTER_POKEMON, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON, GET_POKEMON_DETAIL, GET_TYPE, POST_POKEMON } from "../actions/actions";
 
 
 
@@ -46,6 +46,7 @@ switch(action.type){
         case FILTER_POKEMON:
                 const pokemons = state.allPokemons;
                 const filter = action.payload === "API"? pokemons.filter(e => !e.createdBd): pokemons.filter(e => e.createdBd);
+                console.log(filter)
             return{
                 ...state,
                 pokemons: filter
@@ -70,13 +71,17 @@ switch(action.type){
             } 
 
         case FILTER_TYPE:
-            const pokemonsAll = state.allPokemons
-            const filterType = pokemonsAll.filter(e => e.type.includes(action.payload))
+            const pokemonsAll = state.allPokemons            
+            const filterType = pokemonsAll.filter(e => e.types?.map(e=> e.name ).includes(action.payload))
             return{
                 ...state,
                 pokemons: filterType
             }
 
+        case POST_POKEMON:
+            return{
+                ...state,               
+            } 
     default:
         return state
 }

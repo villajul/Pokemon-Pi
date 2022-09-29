@@ -23,7 +23,7 @@ export default function SearchBar(){
           type="text" 
           value={poke} 
           onChange={handlerSubmit} 
-          placeholder=" Pokemon id..." />
+          placeholder="   Pokemon name..." />
           <input className={ css.input2 } type="image" src={R} alt='pokeball'  />
         </form>
     )

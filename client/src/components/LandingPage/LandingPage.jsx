@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import pokeball from './pokeball.png';
-
-import { useDispatch } from 'react-redux';
 import css from './LandingPage.module.css'
 import videos from './Pokemon.mp4'
 

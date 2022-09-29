@@ -1,10 +1,30 @@
-body {   
-    height: 100vh;
-}
+
 
 .container{
+    height: 100%;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+   
+}
+.containerFilters{
     display: flex;
     flex-direction: row;
-   flex-wrap: wrap;
-   
+    justify-content: space-between;
+    padding: 15px;    
+}
+
+.containerPagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px; 
+}
+.containerCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
