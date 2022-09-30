@@ -1,65 +1,61 @@
-.totalcontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container{
-   
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
+.totalcontainer{   
+    width: 100%;
+    height: 100%;
+    display: flex;    
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-items: center;   
     
 }
 
-.containerInput{
-   width: 50%; 
-   height: 600px;  
-    margin: 10px 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-     
-    position: relative;
+.container{   
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 30px 30px 50px;
+    background-color: rgba(207, 205, 195, 0.6);  
+    border-radius: 10px;  
+    box-shadow:0 5px 10px #000;
+    color:black ;
+    text-shadow: 0px 1px 18px rgba(42, 60, 107,.97 )
+    
 }
-.input{ 
-     
-    display: flex;  
+
+.container input{    
     margin: 10px;  
-     
+    border-radius: 3px;
+    background-color:rgba(207, 205, 195, 0.6) ;
 }
-
-.input label{
-    margin-right: 5px;
-    padding-left: 10px;
+.container label{
+    font-weight: bold;
 }
-
-.input input{
-    width: 200px;
-
-    margin-right: 5px;
-    padding-left: 10px;
-}
-.typeButtons{    
+.typeButtons{  
+    background-color: rgba(42, 60, 107, 0.6);
+    height: 400px; 
+    width: 400px; 
+    margin: 10px;
+    padding: 30px 30px 50px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;   
-    justify-content:space-evenly;
-    align-content: space-around;
-    margin: auto;
+    justify-content:center;
+    align-items: center;    
+    border-radius: 10px;  
+    box-shadow:0 5px 10px #000;
 }
 
 .typeButtons input{
-    background-color: #4e576d;
-    color: #e2e3e9;
-    border: 3px solid #0c203b;
-    align-items: center;
-    height: 40px;
-    width: 70px;
+    background-color: #cfcdc3;
+    color: #2a3c6b;    
+    text-align: center;
+    font-weight: bold;
     margin: 10px;
     border-radius: 5px;
-    padding-left: 10px;
+    padding: 10px 30px ;
     box-shadow: 0 5px 10px #000;
 }
 
@@ -68,19 +64,19 @@
     cursor: pointer;
 }
 
-.button{
-    position: absolute;
-    bottom: -30px;
-    left: 35%;
+.button{    
     width: 30%;
-    height: 5%;
-    box-shadow: 0 5px 10px #000;
-    color: #0c203bd4;    
-    font-weight: bold;
+    letter-spacing: 3px;
     border-radius: 5px;
+    height: 30px;
+    color:#cfcdc3 ;
+    font-weight: 700;   
+    background-color:#2a3c6b ;
+    margin: 40px 40px;
+    text-align: center;
 }
 .button:hover{
-    background-color: #0c203bd4;
+    background-color: #cfcdc3;
     cursor: pointer;
-    color: aliceblue;
+    color: #2a3c6b ;
 }

@@ -5,5 +5,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background-color: #e2e3e9;
+    background-image: url('./pokemon-wallpapers-3.png');
+    object-fit: fill;   
+    
 }

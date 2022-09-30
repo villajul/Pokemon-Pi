@@ -1,0 +1,9 @@
+.filtro{
+    background-color: rgba(42, 60, 107, 0.216);
+    font-weight: bolder;
+    color: rgba(207, 205, 195);
+}
+
+.filtro option{
+    background-color: rgba(42, 60, 107);
+}

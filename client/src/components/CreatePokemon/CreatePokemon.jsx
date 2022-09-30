@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMatch, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 import { PostPokemon } from '../../actions/actions';
@@ -44,22 +44,30 @@ import css from '../CreatePokemon/CreatePokemon.module.css'
       [e.target.name]: e.target.value
     });
   } 
+
+  const GoHome = () => {
+    history('/home') 
+  }
   
   return (
+    <div>
+
+
+    <form onSubmit={handleSubmit}> 
     <div className={css.totalcontainer} >
-      <h1 className={css.title}>Create Your Pokemon</h1>
-        <form className={css.containerInput} onSubmit={handleSubmit}> 
+      
       <div className={css.container}>
+      <h1>Create Your Pokemon</h1>
         
-        <div className={css.input}>
+        <div >
           <label htmlFor="name">Name:</label>
             <input onChange={handleInputChange} type="text" name='name' id='name' value={form.name} required/>
           </div>     
-          <div className={css.input}>
+          <div >
           <label htmlFor="">Image:</label>
         <input onChange={handleInputChange} type="text" name='image' value={form.image}required/>
           </div>
-<div className={css.input}>
+<div >
       <label htmlFor="hp">Hp:</label>
         <input onChange={handleInputChange} type="number" name='hp' id='hp' min="1" max="100" value={form.hp}required/>
 </div>
@@ -92,10 +100,11 @@ import css from '../CreatePokemon/CreatePokemon.module.css'
         </div>
       )
       )
-      }
+    }
       </div>
-      {!form.type.length ? <input className={css.button} type="submit" value="Create Pokemon"  disabled/> : <input className={css.button} type="submit" value="create" /> }   
-       
+      {!form.type.length ? <input className={css.button} type="submit" value="Create Pokemon"  disabled/> : <input className={css.button} type="submit" value="Create your Pokemon" /> }   
+      <input className={css.button} onClick={GoHome} value="Go Home" />
+    </div>
     </form>
     </div>
   )

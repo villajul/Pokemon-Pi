@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { FilterByAttack } from '../../actions/actions';
-
+import './Filter.css'
 const FilterAttack = ({setOrder,pagination}) => {
     const dispatch = useDispatch()
     const HandlerSubmit = (e) => {
@@ -12,7 +12,7 @@ const FilterAttack = ({setOrder,pagination}) => {
     }
   return (
     <div>
-        <select onChange={HandlerSubmit}>
+        <select className='filtro' onChange={HandlerSubmit}>
           <option >**Order by Attack**</option>
           <option value="LOUDER">Attack(+)</option>
           <option value="LESS_STRONG">Attack(-)</option>    

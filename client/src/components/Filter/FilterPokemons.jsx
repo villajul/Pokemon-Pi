@@ -1,6 +1,8 @@
 
 import { useDispatch } from 'react-redux';
 import { FilterByPokemons } from '../../actions/actions';
+import './Filter.css'
+
 
 const FilterPokemons = () => {
   const dispatch = useDispatch()
@@ -13,7 +15,7 @@ const FilterPokemons = () => {
 }
 
   return (
-    <select  name='Existent' onChange={handlerSubmit}>
+    <select className='filtro' name='Existent' onChange={handlerSubmit}>
         <option >**Order by Origin**</option>
         <option value="API">Api</option>
         <option value="DATA_BASE">DataBase</option>

@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { FilterByOrder } from "../../actions/actions"
-
+import './Filter.css'
 
 const FilterOrder = ({setOrder,pagination}) => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const FilterOrder = ({setOrder,pagination}) => {
 
   return (
     <div>
-    <select onChange={HandlerSubmit}>
+    <select className='filtro' onChange={HandlerSubmit}>
       <option >**Order by Name**</option>
       <option value="ASC">A-Z</option>
       <option value="DSC">Z-A</option>      

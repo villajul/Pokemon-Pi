@@ -1,9 +1,10 @@
 import React from 'react'
 
-const loading = () => {
+const Loading = () => {
   return (
-    <div>loading</div>
+    <div><div>
+      <img src="./simple_pokeball.gif" alt="loading" /></div></div>
   )
 }
 
-export default loading
+export default Loading
