@@ -1,0 +1,14 @@
+.image_NotFound{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.image_NotFound img{
+    height: 500px;
+    width: 900px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.4);
+}

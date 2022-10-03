@@ -43,10 +43,9 @@ switch(action.type){
                 types: action.payload
             }
 
-        case FILTER_POKEMON:
-                const pokemons = state.allPokemons;
-                const filter = action.payload === "API"? pokemons.filter(e => !e.createdBd): pokemons.filter(e => e.createdBd);
-                console.log(filter)
+        case FILTER_POKEMON:                
+                const filter = action.payload === "API"? state.allPokemons.filter(e => !e.createdBd): state.allPokemons.filter(e => e.createdBd);
+               
             return{
                 ...state,
                 pokemons: filter
@@ -55,7 +54,7 @@ switch(action.type){
         case FILTER_ORDER:                            
                 const filterOr = action.payload === "ASC"? 
                 state.pokemons.sort((a,b)=>{if(a.name<b.name){return -1}if(a.name>b.name){return 1}return 0}):
-                state.pokemons.sort((a,b)=>{if(a.name<b.name){return 1}if(a.name>b.name){return -1}return 0})
+                state.pokemons.sort((a,b)=>{if(a.name<b.name){return 1}if(a.name>b.name){return -1}return 0});
             return{
                 ...state,
                 pokemons: filterOr
@@ -64,18 +63,18 @@ switch(action.type){
         case FILTER_ATTACK:                            
                 const filterAt = action.payload === "LESS_STRONG"? 
                 state.pokemons.sort((a,b)=>{if(a.attack<b.attack){return -1}if(a.attack>b.attack){return 1}return 0}):
-                state.pokemons.sort((a,b)=>{if(a.attack<b.attack){return 1}if(a.attack>b.attack){return -1}return 0})
+                state.pokemons.sort((a,b)=>{if(a.attack<b.attack){return 1}if(a.attack>b.attack){return -1}return 0});
             return{
                 ...state,
                 pokemons: filterAt
             } 
 
-        case FILTER_TYPE:
-            const pokemonsAll = state.allPokemons            
-            const filterType = pokemonsAll.filter(e => e.types?.map(e=> e.name ).includes(action.payload))
+        case FILTER_TYPE:                        
+            const filterType = state.allPokemons.filter(e => e.types?.map(e=> e.name ).includes(action.payload));
+            const typeError = filterType.length === 0 ? ['error'] : filterType
             return{
                 ...state,
-                pokemons: filterType
+                pokemons: typeError
             }
 
         case POST_POKEMON:

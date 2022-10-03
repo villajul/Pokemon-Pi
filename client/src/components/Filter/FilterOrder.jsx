@@ -12,7 +12,7 @@ const FilterOrder = ({setOrder,pagination}) => {
 }
 
   return (
-    <div>
+    <div className='container'>
     <select className='filtro' onChange={HandlerSubmit}>
       <option >**Order by Name**</option>
       <option value="ASC">A-Z</option>

@@ -1,9 +1,11 @@
 import React from 'react'
-
+import pokeball from '../Loading/VexuoSc.gif'
+import css from '../Loading/loading.module.css'
 const Loading = () => {
   return (
-    <div><div>
-      <img src="./simple_pokeball.gif" alt="loading" /></div></div>
+    <div>
+      <img className={css.img} src={pokeball} alt="loading" />
+      </div>
   )
 }
 

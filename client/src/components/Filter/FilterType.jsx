@@ -9,11 +9,10 @@ const FilterType = () => {
   const types = useSelector(state => state.types);
   const handlerSubmit = (e) => {
     e.preventDefault();
-    dispatch(FilterByType(e.target.value))
-    console.log(e.target.value)
+    dispatch(FilterByType(e.target.value))    
 }
   return (
-    <div>
+    <div className='container'>
       <select className='filtro' name="Types" onChange={handlerSubmit}>
         <option >**Order by Type**</option>
         {types?.map(t =>(

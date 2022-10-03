@@ -2,16 +2,20 @@ import React from 'react'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import validate from '../CreatePokemon/Validate.js';
 
-
-import { PostPokemon } from '../../actions/actions';
+import { GetPokemons, GetType, PostPokemon } from '../../actions/actions';
 import css from '../CreatePokemon/CreatePokemon.module.css'
+import { useEffect } from 'react';
 
 
 
  const CreatePokemon = () => {
+  const history = useNavigate();
   const types = useSelector(state => state.types)
-  const dispatch = useDispatch();  
+  const pokemons = useSelector(state => state.allPokemons)
+  const dispatch = useDispatch();
+  const [error, setError] = useState({});  
   const [form,setForm]= useState({
     name:'',
     image:'',
@@ -23,26 +27,52 @@ import css from '../CreatePokemon/CreatePokemon.module.css'
     weight:'',
     type:[]
   })
-  const history = useNavigate();
-  
+console.log(error)
+  useEffect(()=>{
+  dispatch(GetType())
+  dispatch(GetPokemons())
+  },[dispatch])
   console.log(form)
-  const handleSubmit = (e) => {       
+
+  
+  const handleSubmit = (e) => {    
     dispatch(PostPokemon(form)); 
     alert('Your pokémon has been created');
     history('/home')   
   }
+
+  const equal = (value) => {
+    const equal = pokemons.find(p => p.name === value);
+    if(equal){
+      alert('pokemon alredy exist, Change the name')
+      setForm({
+        ...form,
+         name : ''
+      })
+  };  
+  }
   
   const HandleTypeChange = (e) => {
     const newType = e.target.value;    
-    if(form.type.length < 2) setForm({...form,type:[...form.type,newType]});    
-    if(form.type.includes(newType))setForm({...form,type:form.type.filter(t => t !== newType)})   
+    if(form.type.length < 2) setForm({...form,type:[...form.type,newType]}); 
+    if(form.type.includes(newType))setForm({...form,type:form.type.filter(t => t !== newType)})          
   }
+  
   
   const handleInputChange = (e) => {    
     setForm({
       ...form,
       [e.target.name]: e.target.value
     });
+    equal(form.name)
+
+    setError(
+      validate({
+        ...form,
+        [e.target.name]: e.target.value
+      })
+    )
+    
   } 
 
   const GoHome = () => {
@@ -61,48 +91,61 @@ import css from '../CreatePokemon/CreatePokemon.module.css'
         
         <div >
           <label htmlFor="name">Name:</label>
-            <input onChange={handleInputChange} type="text" name='name' id='name' value={form.name} required/>
+            <input onChange={handleInputChange} type="text" name='name' id='name' value={form.name} />
+            <p>{error.name}</p>
           </div>     
           <div >
           <label htmlFor="">Image:</label>
-        <input onChange={handleInputChange} type="text" name='image' value={form.image}required/>
+        <input onChange={handleInputChange} type="text" name='image' value={form.image}/>
+        <p>{error.image}</p>
           </div>
 <div >
       <label htmlFor="hp">Hp:</label>
-        <input onChange={handleInputChange} type="number" name='hp' id='hp' min="1" max="100" value={form.hp}required/>
+        <input onChange={handleInputChange} type="number" name='hp' id='hp'  value={form.hp}/>
+        <p>{error.hp}</p>
 </div>
   <div className={css.input}> 
           <label htmlFor="attack">Attack:</label>
-            <input onChange={handleInputChange} type="number" name='attack' id='attack' min="1" max="100" value={form.attack}required/>
+            <input onChange={handleInputChange} type="number" name='attack' id='attack'  value={form.attack}/>
+            <p>{error.attack}</p>
   </div>
     <div className={css.input}>
           <label htmlFor="defense">Defense:</label>
-        <input onChange={handleInputChange} type="number" name='defense' id='defense' min="1" max="100" value={form.defense}required/>
+        <input onChange={handleInputChange} type="number" name='defense' id='defense'  value={form.defense}/>
+        <p>{error.defense}</p>
     </div>
 <div className={css.input}>
       <label htmlFor="speed">Speed:</label>
-        <input onChange={handleInputChange} type="number" name='speed' id='speed' min="1" max="100" value={form.speed}required/>
+        <input onChange={handleInputChange} type="number" name='speed' id='speed'  value={form.speed}/>
+        <p>{error.speed}</p>
 </div>
 <div className={css.input}>
           <label htmlFor="height">Height:</label>
-            <input onChange={handleInputChange} type="number" name='height' id='height' min="1" max="20" value={form.height}required/>
+            <input onChange={handleInputChange} type="number" name='height' id='height' value={form.height}/>
+            <p>{error.height}</p>
 </div>
 <div className={css.input}>
           <label  htmlFor="weight">Weight:</label>
-        <input onChange={handleInputChange} type="number" name='weight' id='weight' min="1" max="2000" value={form.weight}required/>
+        <input onChange={handleInputChange} type="number" name='weight' id='weight'  value={form.weight}/>
+        <p>{error.weight}</p>
 </div>
         </div>
 
       <div className={css.typeButtons}>
+        <div className={css.typeButtons1}>
+      <h1>Choose types</h1>
+        </div>
+       
       {types?.map((t,i)=>(
         <div key={i}>          
-          <input  type="button" name={t.name} id={t.id}  value={t.name} onClick={HandleTypeChange} required/>          
+          <input  type="button" name={t.name} id={t.id}  value={t.name} onClick={HandleTypeChange} />          
         </div>
       )
       )
-    }
+      } 
+     {form.type.length === 0 ?(<p>choose one or two types</p>): false}
       </div>
-      {!form.type.length ? <input className={css.button} type="submit" value="Create Pokemon"  disabled/> : <input className={css.button} type="submit" value="Create your Pokemon" /> }   
+      {Object.keys(error).length === 0 && form.type.length ? <input className={css.button} type="submit" value="Create your Pokemon"  /> : false }   
       <input className={css.button} onClick={GoHome} value="Go Home" />
     </div>
     </form>

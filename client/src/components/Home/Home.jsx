@@ -10,6 +10,8 @@ import FilterType from '../Filter/FilterType';
 import FilterPokemons from '../Filter/FilterPokemons';
 import FilterAttack from '../Filter/FilterAttack';
 import FilterOrder from '../Filter/FilterOrder';
+import Loading from '../Loading/Loading';
+import NotFound from '../NotFound/NotFound';
 
 
 
@@ -17,19 +19,21 @@ import FilterOrder from '../Filter/FilterOrder';
 
 const Home = () => {   
     const dispatch = useDispatch() 
-    const pokemones =  useSelector((state) => state.pokemons);
+    const pokemones =  useSelector(state => state.pokemons);
+    const pokerefresh = useSelector(state => state.allPokemons);    
     const [order, setOrder] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
     const [pokePerPage] = useState(9)
     
-    useEffect(()=>{
+    useEffect(()=>{      
       dispatch(GetPokemons())
       dispatch(GetType())
-    },[dispatch])
+      
+    },[])
     
     const lastPoke = currentPage * pokePerPage;
     const firstPoke = lastPoke - pokePerPage;
-    const currentPokes =  [...pokemones].slice(firstPoke,lastPoke)
+    const currentPokes =  pokemones.slice(firstPoke,lastPoke)
     console.log('pokemones',currentPokes )
     
     const pagination = (num) => {
@@ -46,12 +50,16 @@ const Home = () => {
            <FilterPokemons />
            </div>
            <div className={css.containerPagination}>
-           <Pagination pokePerPage={pokePerPage} pokeTotal={pokemones.length} pagination={pagination}/>
+           <Pagination currentPage={currentPage} pokePerPage={pokePerPage} pokeTotal={pokemones.length} pagination={pagination}/>
            </div>
+           { currentPokes[0]==='error' ?<NotFound />:currentPokes.length ?
            <div className={css.containerCards}>
            <Cards pokemons={currentPokes} />
-           </div>
+           </div> : <Loading />
+           }
+           
         </div>
+        
     )
 }
 export default Home

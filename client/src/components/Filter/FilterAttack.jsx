@@ -11,7 +11,7 @@ const FilterAttack = ({setOrder,pagination}) => {
         setOrder(`Order ${e.target.value}`)
     }
   return (
-    <div>
+    <div className='container'>
         <select className='filtro' onChange={HandlerSubmit}>
           <option >**Order by Attack**</option>
           <option value="LOUDER">Attack(+)</option>

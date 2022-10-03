@@ -3,14 +3,14 @@
     height: 100%;
     display: flex;    
     flex-flow:row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;   
     
 }
 
 .container{   
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,9 @@
     text-shadow: 0px 1px 18px rgba(42, 60, 107,.97 )
     
 }
-
+.container h1{
+    margin: 30px;
+}
 .container input{    
     margin: 10px;  
     border-radius: 3px;
@@ -33,19 +35,37 @@
 .container label{
     font-weight: bold;
 }
+.container p{
+    color: red;
+    text-shadow: 0px 1px 18px rgba(42, 60, 107,.97 );
+    font-weight: bold;
+}
+
+
+
+
 .typeButtons{  
     background-color: rgba(42, 60, 107, 0.6);
-    height: 400px; 
-    width: 400px; 
+    height: 600px; 
+    width: 500px; 
     margin: 10px;
     padding: 30px 30px 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     flex-wrap: wrap;
     flex-direction: row;   
     justify-content:center;
     align-items: center;    
     border-radius: 10px;  
     box-shadow:0 5px 10px #000;
+}
+.typeButtons1{
+  text-shadow: 0px 1px 18px rgba(207, 205, 195,.97 );
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .typeButtons input{
@@ -62,6 +82,16 @@
 .typeButtons input:hover{
     background-color: #4e576d86;
     cursor: pointer;
+}
+
+.typeButtons p{
+    color: red;
+    text-shadow: 0px 1px 18px rgba(42, 60, 107,.97 );
+    font-weight: bold;
+    grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 10;
+  grid-row-end: 10;
 }
 
 .button{    
