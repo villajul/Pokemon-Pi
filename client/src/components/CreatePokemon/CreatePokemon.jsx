@@ -54,8 +54,12 @@ console.log(error)
   
   const HandleTypeChange = (e) => {
     const newType = e.target.value;    
-    if(form.type.length < 2) setForm({...form,type:[...form.type,newType]}); 
-    if(form.type.includes(newType))setForm({...form,type:form.type.filter(t => t !== newType)})          
+    if(form.type.length < 2) setForm({...form,type:[...form.type,newType]});
+    else setError({...error, type: 'only select two types'}) 
+    if(form.type.includes(newType)){
+      setForm({...form,type:form.type.filter(t => t !== newType)}); 
+      setError({...error, type: ''})
+    }         
   }
   
   
@@ -143,8 +147,15 @@ console.log(error)
       )
       )
       } 
+      <p>{error.type}</p>
      {form.type.length === 0 ?(<p>choose one or two types</p>): false}
-      </div>
+      
+        {form.type?.map((el,i) => (<input type='button' className={css.typeSelect} onClick={HandleTypeChange} value={el}/>))}
+      
+      </div>      
+      
+
+
       {Object.keys(error).length === 0 && form.type.length ? <input className={css.button} type="submit" value="Create your Pokemon"  /> : false }   
       <input className={css.button} onClick={GoHome} value="Go Home" />
     </div>
