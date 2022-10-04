@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 export default function Validate(input) {
     const error = {};
     const regexName = /^[a-zA-Zñáéíóúü]*$/;

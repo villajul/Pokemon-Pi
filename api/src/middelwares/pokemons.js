@@ -1,6 +1,5 @@
 const { Router } = require('express')
 const axios = require('axios')
-//const Pokemon = require('../models/Pokemon')
 const router = Router()
 const { Pokemon, Type } = require('../db')
 
@@ -19,10 +18,9 @@ router.get('/', async(req, res)=>{
                     through:{attributes:[]}
                 }});
             if(result3 !== null)res.send(result3)
-            else {  
-                console.log('segundooooooooooooooooooooooooooooooooooo')         
+            else {                        
     
-                    const unPoke = await axios(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`).then(r => r.data).then(r => {
+            const unPoke = await axios(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`).then(r => r.data).then(r => {
                         let poke = {
                                 id: r.id,
                                 name: r.name,
@@ -36,8 +34,10 @@ router.get('/', async(req, res)=>{
             }
         }  
      else{
-            const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=40&offset=0').then(r => r.data).then(r => r.results) 
-          const otro = result.map((r) => axios(r.url).then(r => r.data).then(r => {
+            const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=40&offset=0')
+            .then(r => r.data).then(r => r.results) 
+            const otro = result.map((r) => axios(r.url)
+            .then(r => r.data).then(r => {
             let poke = {
                 id: r.id,
                 name: r.name,
@@ -46,10 +46,10 @@ router.get('/', async(req, res)=>{
                 types: r.types.map(e => e.type)
             }
             return poke
-          }))
-          const prome = await Promise.all(otro) 
+            }))
+            const prome = await Promise.all(otro) 
 
-          const bdPoke = await Pokemon.findAll({
+            const bdPoke = await Pokemon.findAll({
             include:
              {
                  model: Type,
@@ -58,10 +58,10 @@ router.get('/', async(req, res)=>{
                      attributes:[] 
                  }
              }
-          })
+            })
           
 
-          const allPoke = prome.concat(bdPoke)
+            const allPoke = prome.concat(bdPoke)
         
         
         res.status(200).send(allPoke)

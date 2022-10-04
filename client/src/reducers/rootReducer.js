@@ -48,7 +48,7 @@ switch(action.type){
                
             return{
                 ...state,
-                pokemons: filter
+                pokemons: [].concat(...filter)
             }
 
         case FILTER_ORDER:                            
@@ -74,7 +74,7 @@ switch(action.type){
             const typeError = filterType.length === 0 ? ['error'] : filterType
             return{
                 ...state,
-                pokemons: typeError
+                pokemons: [].concat(...typeError)
             }
 
         case POST_POKEMON:

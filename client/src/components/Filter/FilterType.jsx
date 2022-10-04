@@ -15,8 +15,8 @@ const FilterType = () => {
     <div className='container'>
       <select className='filtro' name="Types" onChange={handlerSubmit}>
         <option >**Order by Type**</option>
-        {types?.map(t =>(
-          <option value={`${t.name}`}> {t.name} </option>
+        {types?.map((t,i) =>(
+          <option key={i} value={`${t.name}`}> {t.name} </option>
         ))}
       </select>
     </div>

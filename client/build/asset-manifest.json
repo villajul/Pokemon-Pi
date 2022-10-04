@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e2ad431e.chunk.css",
+    "main.js": "/static/js/main.67ba42b4.chunk.js",
+    "main.js.map": "/static/js/main.67ba42b4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d4337050.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d4337050.js.map",
+    "static/js/2.4497f8ef.chunk.js": "/static/js/2.4497f8ef.chunk.js",
+    "static/js/2.4497f8ef.chunk.js.map": "/static/js/2.4497f8ef.chunk.js.map",
+    "static/js/3.fd80b954.chunk.js": "/static/js/3.fd80b954.chunk.js",
+    "static/js/3.fd80b954.chunk.js.map": "/static/js/3.fd80b954.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e2ad431e.chunk.css.map": "/static/css/main.e2ad431e.chunk.css.map",
+    "static/js/2.4497f8ef.chunk.js.LICENSE.txt": "/static/js/2.4497f8ef.chunk.js.LICENSE.txt",
+    "static/media/Pokemon-Logo.e61842b2.png": "/static/media/Pokemon-Logo.e61842b2.png",
+    "static/media/Pokemon.e16a0b2e.mp4": "/static/media/Pokemon.e16a0b2e.mp4",
+    "static/media/VexuoSc.5f371b48.gif": "/static/media/VexuoSc.5f371b48.gif",
+    "static/media/maxresdefault.02ff3599.jpg": "/static/media/maxresdefault.02ff3599.jpg",
+    "static/media/pokeball.3c215899.png": "/static/media/pokeball.3c215899.png",
+    "static/media/pokeball.a7107e0f.png": "/static/media/pokeball.a7107e0f.png",
+    "static/media/App.css": "/static/media/pokemon-wallpapers-3.0e65221d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4337050.js",
+    "static/js/2.4497f8ef.chunk.js",
+    "static/css/main.e2ad431e.chunk.css",
+    "static/js/main.67ba42b4.chunk.js"
+  ]
+}

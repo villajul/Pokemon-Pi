@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import validate from '../CreatePokemon/Validate.js';
-
+import './CreatePokemon.css'
 import { GetPokemons, GetType, PostPokemon } from '../../actions/actions';
 import css from '../CreatePokemon/CreatePokemon.module.css'
 import { useEffect } from 'react';
@@ -15,7 +15,7 @@ import { useEffect } from 'react';
   const types = useSelector(state => state.types)
   const pokemons = useSelector(state => state.allPokemons)
   const dispatch = useDispatch();
-  const [error, setError] = useState({});  
+  const [error, setError] = useState({name: ''});  
   const [form,setForm]= useState({
     name:'',
     image:'',
@@ -27,12 +27,12 @@ import { useEffect } from 'react';
     weight:'',
     type:[]
   })
-console.log(error)
+
   useEffect(()=>{
   dispatch(GetType())
   dispatch(GetPokemons())
   },[dispatch])
-  console.log(form)
+  
 
   
   const handleSubmit = (e) => {    
@@ -58,7 +58,10 @@ console.log(error)
     else setError({...error, type: 'only select two types'}) 
     if(form.type.includes(newType)){
       setForm({...form,type:form.type.filter(t => t !== newType)}); 
-      setError({...error, type: ''})
+      setError({
+        ...error,
+        type: false
+      })      
     }         
   }
   
@@ -150,13 +153,13 @@ console.log(error)
       <p>{error.type}</p>
      {form.type.length === 0 ?(<p>choose one or two types</p>): false}
       
-        {form.type?.map((el,i) => (<input type='button' className={css.typeSelect} onClick={HandleTypeChange} value={el}/>))}
+        {form.type?.map((el,i) => (<input key={i} type='button' id={css[i]}  onClick={HandleTypeChange} defaultValue={el}/>))}
       
       </div>      
       
 
 
-      {Object.keys(error).length === 0 && form.type.length ? <input className={css.button} type="submit" value="Create your Pokemon"  /> : false }   
+      {Object.keys(error).length === 0 && form.type.length > 1 ? <input className={css.button} type="submit" value="Create your Pokemon"  /> : false }   
       <input className={css.button} onClick={GoHome} value="Go Home" />
     </div>
     </form>

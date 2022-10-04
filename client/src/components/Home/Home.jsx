@@ -1,4 +1,3 @@
-//import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
@@ -20,7 +19,7 @@ import NotFound from '../NotFound/NotFound';
 const Home = () => {   
     const dispatch = useDispatch() 
     const pokemones =  useSelector(state => state.pokemons);
-    const pokerefresh = useSelector(state => state.allPokemons);    
+    //const pokerefresh = useSelector(state => state.allPokemons);    
     const [order, setOrder] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
     const [pokePerPage] = useState(9)
@@ -29,12 +28,12 @@ const Home = () => {
       dispatch(GetPokemons())
       dispatch(GetType())
       
-    },[])
+    },[dispatch])
     
     const lastPoke = currentPage * pokePerPage;
     const firstPoke = lastPoke - pokePerPage;
     const currentPokes =  pokemones.slice(firstPoke,lastPoke)
-    console.log('pokemones',currentPokes )
+   
     
     const pagination = (num) => {
       setCurrentPage(num)
@@ -52,7 +51,7 @@ const Home = () => {
            <div className={css.containerPagination}>
            <Pagination currentPage={currentPage} pokePerPage={pokePerPage} pokeTotal={pokemones.length} pagination={pagination}/>
            </div>
-           { currentPokes[0]==='error' ?<NotFound />:currentPokes.length ?
+           { currentPokes[0]==='error' ?<NotFound />: currentPokes.length !== 0  ?
            <div className={css.containerCards}>
            <Cards pokemons={currentPokes} />
            </div> : <Loading />
