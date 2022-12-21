@@ -1,24 +1,30 @@
-.container{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    
-
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
-.filtro{   
-    width: 200px;
-    height: 30px;
-    margin:20px ;
-    border-radius: 20px;
-    background-color: rgba(42, 60, 107, 0.4);
-    font-weight: bolder;
-    color: rgba(250, 250, 250);
+.filtro {
+  width: 200px;
+  height: 30px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgba(42, 60, 107, 0.8);
+  font-weight: bolder;
+  color: rgba(250, 250, 250);
+  border: solid 0.15rem rgb(42, 60, 107);
+  text-align: center;
 }
 
-.filtro option{    
-    background-color: rgba(42, 60, 107,.9);
-    padding: 5px 5px;
-    font-weight: 500;
-    text-align: center;
+.container option {
+  background-color: rgba(42, 60, 107, 0.9);
+  padding: 5px 5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }

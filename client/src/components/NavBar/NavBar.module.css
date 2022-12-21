@@ -1,43 +1,59 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
 
-.container{   
-    width: 100%; 
-    height: 100%;
-    display: flex;       
-    flex-flow:row wrap;
-    justify-content: center;
-    align-items: center;
-      
+  background: linear-gradient(
+    90deg,
+    rgba(42, 60, 107, 1) 0%,
+    rgba(207, 205, 195, 1) 50%,
+    rgba(134, 135, 161, 1) 100%
+  );
+}
+.area1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.area2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.area3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
 
-background: linear-gradient(90deg, rgba(42,60,107,1) 0%, rgba(207,205,195,1) 50%, rgba(134,135,161,1) 100%);
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  width: 12rem;
+  padding: 0.5rem;
 }
-.area1{ 
-   width: 33%;
-   display: flex;       
-   flex-flow:row wrap;
-   justify-content: center;
-   align-items: center;
+.h2 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-shadow: 0 0 15px rgb(42, 60, 107);
 }
-.area2{
-    width: 33%;
-    display: flex;       
-    flex-flow:row wrap;
-    justify-content: center;
-    align-items: center;
+
+@media (max-width: 1024px) {
+  .logo {
+    height: 4rem;
+    width: 8rem;
+  }
 }
-.area3{
-    width: 33%;
-    display: flex;       
-    flex-flow:row wrap;
-    justify-content: center;
-    align-items: center;
-}
-.logo{      
-    width: 30%;
-    padding: 30px;
-}
-.h2{      
-    color: #fff;
-    font-size: 30px;
-    padding: 30px;
-    text-shadow: 0 0 15px rgb(42,60,107) ;    
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }

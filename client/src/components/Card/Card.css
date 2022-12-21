@@ -1,73 +1,97 @@
-.fire{
-    color: red;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.fire {
+  color: red;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.bug{
-    color: darkgreen;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.bug {
+  color: darkgreen;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.grass{
-    color: green;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.grass {
+  color: green;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.dark{
-    color: darkslategray;
-    text-shadow: 0px 0px 15px rgb(207, 205, 195);
+.dark {
+  color: darkslategray;
+  text-shadow: 0px 0px 15px rgb(207, 205, 195);
+  margin: 1rem;
 }
-.dragon{
-    color: darkcyan;
-    text-shadow: 0px 0px 15px rgb(207, 205, 195);
+.dragon {
+  color: darkcyan;
+  text-shadow: 0px 0px 15px rgb(207, 205, 195);
+  margin: 1rem;
 }
-.electric{
-    color: yellow;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.electric {
+  color: yellow;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
 
-.fairy{
-    color: rgb(255, 134, 255);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.fairy {
+  color: rgb(255, 134, 255);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.fighting{
-    color: orange;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.fighting {
+  color: orange;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.flying{
-    color: cadetblue;
-    text-shadow: 0px 0px 15px rgb(207, 205, 195);
+.flying {
+  color: cadetblue;
+  text-shadow: 0px 0px 15px rgb(207, 205, 195);
+  margin: 1rem;
 }
-.ghost{
-    color: rgb(126, 76, 126);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.ghost {
+  color: rgb(126, 76, 126);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.ground{
-    color: rgb(156, 113, 57);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.ground {
+  color: rgb(156, 113, 57);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.ice{
-    color: rgb(58, 246, 246);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.ice {
+  color: rgb(58, 246, 246);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.normal{
-    color: darksalmon;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.normal {
+  color: darksalmon;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.poison{
-    color: purple;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.poison {
+  color: purple;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.psychic{
-    color: fuchsia;
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.psychic {
+  color: fuchsia;
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.rock{
-    color: rgb(104, 58, 58);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.rock {
+  color: rgb(104, 58, 58);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.steel{
-    color: rgb(16, 168, 16);
-    text-shadow: 0px 0px 15px rgb(42, 60, 107);
+.steel {
+  color: rgb(16, 168, 16);
+  text-shadow: 0px 0px 15px rgb(42, 60, 107);
+  margin: 1rem;
 }
-.water{
-    color: rgb(129, 129, 225);
-    text-shadow: 0px 0px 15px rgb(207, 205, 195);
+.water {
+  color: rgb(129, 129, 225);
+  text-shadow: 0px 0px 15px rgb(207, 205, 195);
+  margin: 1rem;
+}
+.unknown {
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 10px rgb(207, 205, 195), 0px 0px 15px rgb(207, 205, 195),
+    0px 0px 15px rgb(207, 205, 195);
+  margin: 1rem;
 }

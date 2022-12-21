@@ -11,4 +11,18 @@
     width: 900px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.4);
+    margin: 2rem;
+}
+@media (max-width: 1024px){
+    .image_NotFound img{
+        height: 25rem;
+        width: 35rem;
+}
+}
+
+@media (max-width: 600px){
+    .image_NotFound img{
+        height: 15rem;
+        width: 20rem;
+}
 }
