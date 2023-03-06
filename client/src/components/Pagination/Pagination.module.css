@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+
+.btn {
+  background-color: rgba(42, 60, 107, 0.8);
+  color: rgb(207, 205, 195);
+  height: 30px;
+  width: 30px;
+  margin: .2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: solid .15rem rgb(42, 60, 107);
+}
+.active {
+  color: rgba(42, 60, 107, 1);
+  cursor: pointer;
+  background: rgba(207, 205, 195, 0.7);
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn_pn {
+  background-color: rgba(42, 60, 107, 0.8);
+  color: rgb(207, 205, 195);
+  height: 30px;
+  width: 40px;
+  margin: .2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  padding: .2rem;
+  border: solid .15rem rgb(42, 60, 107);
+}
+
+.btn_pn:hover {
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: rgba(12, 32, 59, 1);
+  cursor: pointer;
+  background: rgba(207, 205, 195);
+  font-weight: bold;
+}

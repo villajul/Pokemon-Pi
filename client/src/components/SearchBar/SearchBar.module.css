@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.input {
+  height: 1.7rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+}
+.input2 {
+  padding-left: 8px;
+  width: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .input {
+    height: 1.25rem;
+    width: 9rem;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+  }
+  .input2 {
+    width: 2rem;
+  }
+}
